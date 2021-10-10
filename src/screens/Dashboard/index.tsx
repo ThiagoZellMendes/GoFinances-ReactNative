@@ -1,10 +1,32 @@
 import React from 'react';
-import { HighlightCard } from '../../components/HighlightCard'
+import { HighlightCard } from '../../components/HighlightCard';
+import { TransactionCard } from '../../components/TransationCard'
 
-import { Container, Header, UserInfo, UserWrapper, Photo,  User, UserGreetings, UserName, Icon, HighlightCards } from './styles'
-
+import { 
+  Container,
+  Header,
+  UserInfo, 
+  UserWrapper, 
+  Photo,  
+  User, 
+  UserGreetings, 
+  UserName, 
+  Icon, 
+  HighlightCards,
+  Transactions,
+  Title,
+} from './styles';
 
 export function Dashboard() {
+  const data = {
+    title: 'Desenvolvimento de Sites',
+    amount:'R$ 12.000,00',
+    category:{
+      name: 'Vendas',
+      icon: 'dollar-sign'
+    },
+    date: '13/04/2020'
+  };
   return (
     <Container>
       <Header>
@@ -43,6 +65,13 @@ export function Dashboard() {
           lastTransaction="01 à 16 de abril"
           />
       </HighlightCards>
+
+       <Transactions>
+        <Title>Listagem</Title>
+
+        <TransactionCard data={data}/>
+
+      </Transactions>
     </Container>
   );
 }
