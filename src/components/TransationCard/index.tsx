@@ -16,6 +16,10 @@ interface CategoryProps {
   icon: string;
 }
 
+interface Props {
+  data: TransactionCardProps
+}
+
 export interface TransactionCardProps {
     type: 'positive' | 'negative';
     title: string;
@@ -24,9 +28,7 @@ export interface TransactionCardProps {
     date: string;
 }
 
-interface Props {
-  data: TransactionCardProps
-}
+
 
 export function TransactionCard({ data } : Props) {
   return (

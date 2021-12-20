@@ -19,12 +19,12 @@ import {
   TransactionList,
 } from './styles';
 
-interface DataListProps extends TransactionCardProps {
+export interface DataListProps extends TransactionCardProps {
   id: string;
 }
 
 export function Dashboard() {
-  const data = [
+  const data : DataListProps[] = [
     {
     id: '1',
     type: 'positive',
@@ -104,11 +104,8 @@ export function Dashboard() {
 
         <TransactionList 
           data={data}
+          keyExtractor={ item => item.id}
           renderItem={({ item })=> <TransactionCard data={item}/>}
-          showsVerticalScrollIndicator={false}
-          contentContainerStyle={{
-            paddingBottom: getBottomSpace()
-          }}
         /> 
 
       </Transactions>

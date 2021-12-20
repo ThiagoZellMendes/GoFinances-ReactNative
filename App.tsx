@@ -1,17 +1,17 @@
-
 import React from 'react';
-import AppLoading from 'expo-app-loading';
-import { ThemeProvider } from 'styled-components';
-
 import {
-  useFonts,
   Poppins_400Regular,
   Poppins_500Medium,
-  Poppins_700Bold
+  Poppins_700Bold, useFonts
 } from '@expo-google-fonts/poppins';
-
+import AppLoading from 'expo-app-loading';
+import { ThemeProvider } from 'styled-components';
 import theme from './src/global/styles/theme';
-import  { Dashboard }  from './src/screens/Dashboard';
+import { Register } from './src/screens/Register';
+import { Dashboard } from './src/screens/Dashboard';
+
+
+
 
 
 export default function App() {
@@ -26,7 +26,7 @@ export default function App() {
   }
   return (
     <ThemeProvider theme={theme}>
-      <Dashboard />
+      <Register />
     </ThemeProvider>
    );
 }
