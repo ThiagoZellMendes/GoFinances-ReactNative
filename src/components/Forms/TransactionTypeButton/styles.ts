@@ -37,7 +37,7 @@ export const Icon = styled(Feather)<IconsProps>`
   margin-right: 12px ;
   color: ${({theme, type}) => 
     type === 'up' ? theme.colors.success : theme.colors.attention
-  }
+  };
 `;
 
 export const Title = styled.Text`
