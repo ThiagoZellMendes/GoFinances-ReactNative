@@ -103,4 +103,10 @@ export const TransactionList = styled(
 
 `;
 
+export const LoadConteiner = styled.View`
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+`;
+
 
