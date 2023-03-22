@@ -1,3 +1,9 @@
+// import 'react-native-gesture-handler';
+
+//import o intl porque no android não funciona sem essa importação
+import 'intl';
+import 'intl/locale-data/jsonp/pt-BR'
+
 import React from "react";
 import {
   Poppins_400Regular,
