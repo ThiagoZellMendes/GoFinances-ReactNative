@@ -30,9 +30,9 @@ A proposta do App é fazer o controle das finanças, atráves do mesmo, assim co
 ## 🎨 Layout
 
 <p align="center"> 
-<img alt="Repository size" src="https://user-images.githubusercontent.com/64324862/230531744-352c4b9f-a4d7-49f9-bf89-2ef772fc89c4.png">
-<img alt="Repository size" src="https://user-images.githubusercontent.com/64324862/230531763-f77cfefd-9ee0-4065-9c63-b96fe273e805.png">
-<img alt="Repository size" src="https://user-images.githubusercontent.com/64324862/230531775-2a63dc13-d7d2-4e79-a722-463614c74c85.png">
+<img alt="Repository size" src="https://user-images.githubusercontent.com/64324862/230531744-352c4b9f-a4d7-49f9-bf89-2ef772fc89c4.png" width="320px">
+<img alt="Repository size" src="https://user-images.githubusercontent.com/64324862/230531763-f77cfefd-9ee0-4065-9c63-b96fe273e805.png" width="315px">
+<img alt="Repository size" src="https://user-images.githubusercontent.com/64324862/230531775-2a63dc13-d7d2-4e79-a722-463614c74c85.png" width="315px">
 <p>
 
 ## 🛠 Tecnologias
