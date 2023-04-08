@@ -26,22 +26,8 @@ import {
   UserWrapper,
   LoadConteiner,
 } from "./styles";
+import { DataListProps, HighlightData } from "./props";
 
-export interface DataListProps extends TransactionCardProps {
-  id: string;
-}
-
-interface HighlightProps {
-  amount: string;
-  lastTransaction: string;
-}
-
-interface HighlightData {
-  entries: HighlightProps;
-  expensives: HighlightProps;
-  total: HighlightProps
-  
-}
 
 export function Dashboard() {
   const [isLoading, setIsLoading] = useState(true);

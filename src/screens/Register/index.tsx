@@ -19,11 +19,7 @@ import {
   Title,
   TransationTypes,
 } from "./styles";
-
-interface FormData {
-  name: string;
-  amount: string;
-}
+import { FormData } from "./props";
 
 const schema = Yup.object().shape({
   name: Yup.string().required("Nome é obrigatorio"),

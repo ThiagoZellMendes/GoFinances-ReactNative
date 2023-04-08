@@ -22,23 +22,9 @@ import {
   MonthSelectIcon,
   Title,
 } from "./styles";
+import { CategoryData, TransactionData } from "./props";
 
-interface TransactionData {
-  type: "positive" | "negative";
-  name: string;
-  amount: string;
-  category: string;
-  date: string;
-}
 
-interface CategoryData {
-  key: string;
-  name: string;
-  total: number;
-  totalFormatted: string;
-  color: string;
-  percent: string;
-}
 
 export function Resume() {
   const [totalByCategories, setTotalByCategories] = useState<CategoryData[]>(
