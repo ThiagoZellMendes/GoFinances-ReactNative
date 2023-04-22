@@ -27,6 +27,7 @@ import {
   LoadConteiner,
 } from "./styles";
 import { DataListProps, HighlightData } from "./props";
+import { useAuth } from "../../hooks/Auth/Auth";
 
 
 export function Dashboard() {
@@ -35,6 +36,8 @@ export function Dashboard() {
   const [highlightData, setHighlightData] = useState<HighlightData>(
     {} as HighlightData
   );
+
+  const { signOut, user } = useAuth();
 
   const theme = useTheme();
 
@@ -144,15 +147,15 @@ export function Dashboard() {
               <UserInfo>
                 <Photo
                   source={{
-                    uri: "https://avatars.githubusercontent.com/u/64324862?v=4",
+                    uri: user.photo,
                   }}
                 />
                 <User>
                   <UserGreetings>Olá, </UserGreetings>
-                  <UserName>Thiago Mendes</UserName>
+                  <UserName>{user.name}</UserName>
                 </User>
               </UserInfo>
-              <LogoutButton onPress={() => {}}>
+              <LogoutButton onPress={signOut}>
                 <Icon name="power" />
               </LogoutButton>
             </UserWrapper>

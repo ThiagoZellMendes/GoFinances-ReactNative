@@ -13,8 +13,10 @@ export interface UserProps {
 
 export interface IAuthContextData {
   user: UserProps;
-  signInWithGoogle(): Promise<void>
-  signInWithApple(): Promise<void>
+  signInWithGoogle(): Promise<void>;
+  signInWithApple(): Promise<void>;
+  signOut(): Promise<void>;
+  userStorageLoading: boolean;
 }
 
 export interface AuthorizationResponseProps {
