@@ -1,6 +1,5 @@
 import React from "react";
 import { FlatList } from "react-native";
-import { categories } from "../../../utils/categories";
 import { Button } from "../../components/Forms/Button";
 
 import {
@@ -14,6 +13,7 @@ import {
   Footer,
 } from "./styles";
 import { CategoryProps, Props } from "./props";
+import { categories } from "../../utils/categories";
 
 export function CategorySelect({
   category,
