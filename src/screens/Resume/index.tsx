@@ -23,6 +23,7 @@ import {
   Title,
 } from "./styles";
 import { CategoryData, TransactionData } from "./props";
+import { useAuth } from "../../hooks/Auth/Auth";
 
 
 
@@ -33,7 +34,8 @@ export function Resume() {
   const [isLoading, setIsLoading] = useState(false);
   const [selectDate, setSelectDate] = useState(new Date());
   const theme = useTheme();
-
+  const { user } = useAuth();
+ 
   function handleDateChange(action: "next" | "prev") {
     if (action === "next") {
       setSelectDate(addMonths(selectDate, 1));
@@ -44,7 +46,7 @@ export function Resume() {
 
   async function loadData() {
     setIsLoading(true);
-    const dataKey = "@gofinances:transactions";
+    const dataKey = `@gofinances:transactions_user:${user.id}`;
     const response = await AsyncStorage.getItem(dataKey);
     const responseFormatted = response ? JSON.parse(response) : [];
 

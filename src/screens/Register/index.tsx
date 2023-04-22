@@ -20,6 +20,7 @@ import {
   TransationTypes,
 } from "./styles";
 import { FormData } from "./props";
+import { useAuth } from "../../hooks/Auth/Auth";
 
 const schema = Yup.object().shape({
   name: Yup.string().required("Nome é obrigatorio"),
@@ -36,6 +37,8 @@ export function Register() {
     key: "category",
     name: "Categorias",
   });
+
+  const { user } = useAuth();
 
   const navigation = useNavigation<any>();
 
@@ -76,21 +79,19 @@ export function Register() {
     };
 
     try {
-      const datakey = "@gofinances:transactions";
+      const datakey = `@gofinances:transactions_user:${user.id}`;
       const data = await AsyncStorage.getItem(datakey);
       const currentData = data ? JSON.parse(data) : [];
 
       const dataFormatted = [...currentData, newTransactions];
 
       await AsyncStorage.setItem(datakey, JSON.stringify(dataFormatted));
-
       reset();
       setTransactionType("");
       setCategory({
         key: "category",
         name: "Categoria",
       });
-
       navigation.navigate("Listagem");
     } catch (err) {
       console.log(err);
@@ -99,11 +100,10 @@ export function Register() {
   }
 
 
-  //Limpar Listagem de itens
+  // Limpar Listagem de itens
   // useEffect(() => {
   //   async function removeAll(){
   //    await AsyncStorage.removeItem(datakey)
-     
   //   }
   //   removeAll()
   // },[])
