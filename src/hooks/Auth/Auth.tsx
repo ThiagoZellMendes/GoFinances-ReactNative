@@ -20,6 +20,7 @@ function AuthProvider({ children }: AuthProviderProps) {
   const [userStorageLoading, setUserStorageLoading] = useState(true);
 
   const userStorageKey = "@gofinances:user";
+  // const TransactionStorageKey = `@gofinances:transactions_user:${user.id}`;
 
   async function signInWithGoogle() {
     try {
@@ -36,7 +37,7 @@ function AuthProvider({ children }: AuthProviderProps) {
           `https://www.googleapis.com/oauth2/v1/userinfo?alt=json&access_token=${params.access_token}`
         );
         const userInfo = await response.json();
-        console.log(userInfo)
+        console.log(userInfo);
         if (userInfo) {
           const userLogged = {
             id: userInfo.id,
@@ -45,7 +46,10 @@ function AuthProvider({ children }: AuthProviderProps) {
             photo: userInfo.picture,
           };
           setUser(userLogged);
-          await AsyncStorage.setItem(userStorageKey, JSON.stringify(userLogged));
+          await AsyncStorage.setItem(
+            userStorageKey,
+            JSON.stringify(userLogged)
+          );
         }
       }
     } catch (error) {
@@ -80,8 +84,10 @@ function AuthProvider({ children }: AuthProviderProps) {
   }
 
   async function signOut() {
-    setUser( {} as UserProps);
+    setUser({} as UserProps);
     await AsyncStorage.removeItem(userStorageKey);
+
+    // await AsyncStorage.removeItem(TransactionStorageKey);
   }
 
   useEffect(() => {
