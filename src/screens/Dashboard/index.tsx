@@ -66,7 +66,7 @@ export function Dashboard() {
   }
 
   async function loadTransactions() {
-    const dataKey = "@gofinances:transactions";
+    const dataKey = `@gofinances:transactions_user:${user.id}`;
     const response = await AsyncStorage.getItem(dataKey);
     const transactions = response ? JSON.parse(response) : [];
 
@@ -111,8 +111,8 @@ export function Dashboard() {
       transactions,
       "negative"
     );
-    const totalInterval = lastTransactionExpensives === 0
-    ? 'Não há Transações'
+    const totalInterval = lastTransactionExpensives === 0 
+    ? 'Não há Transações de saída'
     : `01 a ${lastTransactionExpensives}`;
 
     const total = entriesTotal - expensivesTotal;
