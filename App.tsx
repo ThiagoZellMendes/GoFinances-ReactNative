@@ -4,7 +4,6 @@
 import "intl";
 import "intl/locale-data/jsonp/pt-BR";
 
-import React from "react";
 import {
   Poppins_400Regular,
   Poppins_500Medium,
@@ -12,15 +11,14 @@ import {
   useFonts,
 } from "@expo-google-fonts/poppins";
 import AppLoading from "expo-app-loading";
+import React from "react";
+import { StatusBar } from "react-native";
 import { ThemeProvider } from "styled-components";
 import theme from "./src/global/styles/theme";
-import { StatusBar } from "react-native";
 
-import { NavigationContainer } from "@react-navigation/native";
-import { AppRoutes } from "./src/routes/app.routes";
-import { AuthProvider } from "./src/hooks/Auth/Auth";
+import { AuthProvider, useAuth } from "./src/hooks/Auth/Auth";
 
-import { SignIn } from "./src/screens/signIn";
+import { Routes } from "./src/routes";
 
 export default function App() {
   const [FontsLoaded] = useFonts({
@@ -29,17 +27,17 @@ export default function App() {
     Poppins_700Bold,
   });
 
-  if (!FontsLoaded) {
+  const { userStorageLoading } = useAuth();
+
+  if (!FontsLoaded || userStorageLoading) {
     return <AppLoading />;
   }
   return (
     <ThemeProvider theme={theme}>
-      <NavigationContainer>
-        <StatusBar barStyle="light-content" />
-        <AuthProvider>
-          <SignIn />
-        </AuthProvider>
-      </NavigationContainer>
+      <StatusBar barStyle="light-content" />
+      <AuthProvider>
+        <Routes />
+      </AuthProvider>
     </ThemeProvider>
   );
 }
