@@ -1,6 +1,8 @@
-<h4 align="center"> 
-	🚧 "GoFinances" 🚀 em construção... 🚧
-</h4>
+
+![Badge Finalizado](http://img.shields.io/static/v1?label=STATUS&message=FINALIZADO&color=GREEN&style=for-the-badge)
+
+
+
 
 <p align="center">
   <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/ThiagoZellMendes/GoFinances-ReactNative?color=%2304D361">
@@ -27,13 +29,26 @@ Foi usando tambem a "Conventional Commits", para melhor controle dos commits do 
 
 A proposta do App é fazer o controle das finanças, atráves do mesmo, assim como um gráfico mostrando todos os gastos e sua porcentagens 
 
+# :rocket: To-Do
+
+- [x] Implement Layout Screens;
+- [x] Created Navigations(Tab and Stack Navigation);
+- [x] Implement Forms;
+- [x] Implement Context and Autentication;
+- [x] Implement Auth with Google and Apple;
+- [x] Implement Async Storage;
+
 ## 🎨 Layout
 
 <p align="center"> 
-<img alt="Repository size" src="https://user-images.githubusercontent.com/64324862/230531744-352c4b9f-a4d7-49f9-bf89-2ef772fc89c4.png" width="320px">
-<img alt="Repository size" src="https://user-images.githubusercontent.com/64324862/230531763-f77cfefd-9ee0-4065-9c63-b96fe273e805.png" width="315px">
-<img alt="Repository size" src="https://user-images.githubusercontent.com/64324862/230531775-2a63dc13-d7d2-4e79-a722-463614c74c85.png" width="315px">
+<img alt="Repository size" src="https://user-images.githubusercontent.com/64324862/234735541-b85e9859-b55e-4823-a4d9-f2b3229bc6b3.png" width="300px">
+<img alt="Repository size" src="https://user-images.githubusercontent.com/64324862/230531744-352c4b9f-a4d7-49f9-bf89-2ef772fc89c4.png" width="300px">
+<img alt="Repository size" src="https://user-images.githubusercontent.com/64324862/230531763-f77cfefd-9ee0-4065-9c63-b96fe273e805.png" width="300px">
+<img alt="Repository size" src="https://user-images.githubusercontent.com/64324862/230531775-2a63dc13-d7d2-4e79-a722-463614c74c85.png" width="300px">
+
 <p>
+
+
 
 ## 🛠 Tecnologias
 
